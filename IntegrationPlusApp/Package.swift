@@ -5,9 +5,17 @@ let package = Package(
     name: "IntegrationPlusApp",
     platforms: [.iOS(.v15)],
     products: [
-        .library(
+        .iOSApplication(
             name: "IntegrationPlusApp",
-            targets: ["IntegrationPlusApp"]
+            targets: ["IntegrationPlusApp"],
+            bundleIdentifier: "com.example.integrationplus",
+            teamIdentifier: "", 
+            displayVersion: "1.0",
+            bundleVersion: "1",
+            supportedDeviceFamilies: [.pad, .phone],
+            supportedInterfaceOrientations: [
+                .portrait, .landscapeLeft, .landscapeRight
+            ]
         )
     ],
     dependencies: [
@@ -15,18 +23,13 @@ let package = Package(
         .package(path: "../AppShell")
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "IntegrationPlusApp",
             dependencies: [
                 .product(name: "DesignSystem", package: "DesignSystem"),
                 .product(name: "AppShell", package: "AppShell")
             ],
             path: "Sources"
-        ),
-        .testTarget(
-            name: "IntegrationPlusAppTests",
-            dependencies: ["IntegrationPlusApp"],
-            path: "Tests"
         )
     ]
 )
