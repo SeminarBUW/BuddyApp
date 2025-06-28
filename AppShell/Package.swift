@@ -7,6 +7,11 @@ let package = Package(
         .library(name: "AppShell", targets: ["AppShell"])
     ],
     targets: [
-        .target(name: "AppShell", path: "Sources")
+        .target(name: "AppShell", path: "Sources"),
+        .testTarget(
+            name: "AppShellTests",
+            dependencies: ["AppShell"],
+            path: "Tests"
+        )
     ]
 )
