@@ -1,11 +1,12 @@
 import SwiftUI
+import DesignSystem
+import AppShell
 
 @main
-struct BuddyAppApp: App {
+struct IntegrationPlusApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .accentColor(AppColors.accent)
         }
     }
 }
